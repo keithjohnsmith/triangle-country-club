@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application for Membership &middot; Triangle Country Club</title>
+  <meta name="description" content="Apply for membership of Triangle Country Club, Zimbabwe — complete the online application form and our Administration office will be in touch." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="css/fonts.css?v=20" />
+  <link rel="stylesheet" href="css/styles.css?v=20" />
+  <link rel="canonical" href="https://trianglecountryclub.com/membership-application.html" />
+  <style>
+    .mform fieldset { border: 1px solid rgba(22,35,58,0.14); border-radius: var(--radius); padding: 1.4rem; margin: 0; }
+    .mform legend { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; padding: 0 0.5rem; }
+    .mform .stack > * + * { margin-top: 1.3rem; }
+    .mform .opt-grid { display: grid; grid-template-columns: 1fr; gap: 0.6rem; margin-top: 0.5rem; }
+    @media (min-width: 560px) { .mform .opt-grid.cols2 { grid-template-columns: 1fr 1fr; } .mform .opt-grid.cols3 { grid-template-columns: repeat(3,1fr); } }
+    .mform .opt { display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; padding: 0.6rem 0.8rem; border: 1px solid rgba(22,35,58,0.12); border-radius: 12px; cursor: pointer; transition: border-color 0.2s; }
+    .mform .opt:hover { border-color: var(--clay); }
+    .mform input[type=radio], .mform input[type=checkbox] { width: auto; margin: 0; accent-color: var(--clay); flex: none; }
+    .mform .sub { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-deep); margin: 0.4rem 0 0.2rem; }
+    .mform .child-row { display: grid; grid-template-columns: 1fr; gap: 0.6rem; margin-bottom: 0.7rem; }
+    @media (min-width: 560px) { .mform .child-row { grid-template-columns: 2fr 1.1fr 0.8fr; } }
+    .mform .note { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
+    .mform .btn-add { font-size: 0.85rem; font-weight: 600; color: var(--clay); box-shadow: inset 0 0 0 1.5px rgba(28,110,106,0.4); padding: 0.5rem 1rem; border-radius: 999px; }
+    .mform .declaration { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.65; }
+    .mform .declaration li { margin-top: 0.35rem; }
+  </style>
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main>
+    <header class="page-hero">
+      <div class="page-hero-media"><img src="images/members.webp" alt="" /></div>
+      <div class="wrap">
+        <p class="eyebrow">Membership · Application</p>
+        <h1 class="display page-hero-title">Application for <span class="italic-accent">membership.</span></h1>
+        <p class="page-hero-sub">Complete the form below to apply to join Triangle Country Club. On submission it goes straight to our Administration office, and we'll be in touch about entrance fees, subscriptions and the next steps.</p>
+      </div>
+    </header>
+
+    <section class="pad">
+      <div class="wrap" style="max-width:820px">
+        <div class="form-card">
+          <p class="lede" style="font-size:1.05rem">I hereby apply to become a member of the Triangle Country Club and, upon being accepted, agree to abide by the Constitution of the Club.</p>
+          <form class="form mform stack" id="memberForm" style="margin-top:1.8rem">
+
+            <!-- Applicant -->
+            <fieldset>
+              <legend>Applicant details</legend>
+              <div class="stack">
+                <div class="grid2">
+                  <div><label for="surname">Surname *</label><input id="surname" name="surname" required /></div>
+                  <div><label for="forenames">Forename(s) *</label><input id="forenames" name="forenames" required /></div>
+                </div>
+                <div><label for="home_address">Home address</label><textarea id="home_address" name="home_address" rows="2"></textarea></div>
+                <div class="grid2">
+                  <div><label for="home_email">Email *</label><input id="home_email" name="home_email" type="email" required /></div>
+                  <div><label for="home_tel">Telephone</label><input id="home_tel" name="home_tel" type="tel" /></div>
+                </div>
+                <div><label for="occupation">Occupation</label><input id="occupation" name="occupation" /></div>
+                <div><label for="work_address">Work address</label><textarea id="work_address" name="work_address" rows="2"></textarea></div>
+                <div class="grid2">
+                  <div><label for="work_email">Work email</label><input id="work_email" name="work_email" type="email" /></div>
+                  <div><label for="work_tel">Work telephone</label><input id="work_tel" name="work_tel" type="tel" /></div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Membership type -->
+            <fieldset>
+              <legend>Type of membership applied for</legend>
+              <p class="sub">A · Triangle Ltd</p>
+              <div class="opt-grid cols3">
+                <label class="opt"><input type="radio" name="membership_type" value="triangle_family" /> Family</label>
+                <label class="opt"><input type="radio" name="membership_type" value="triangle_single" /> Single</label>
+                <label class="opt"><input type="radio" name="membership_type" value="triangle_student" /> Student</label>
+              </div>
+              <p class="sub" style="margin-top:0.9rem">B · Country <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink-soft)">(all non-Triangle Ltd employees)</span></p>
+              <div class="opt-grid cols3">
+                <label class="opt"><input type="radio" name="membership_type" value="country_married" /> Married</label>
+                <label class="opt"><input type="radio" name="membership_type" value="country_single" /> Single</label>
+                <label class="opt"><input type="radio" name="membership_type" value="country_temporary" /> Temporary</label>
+              </div>
+            </fieldset>
+
+            <!-- Family -->
+            <fieldset>
+              <legend>For family units</legend>
+              <div class="stack">
+                <div><label for="spouse">Forename of wife / husband</label><input id="spouse" name="spouse" /></div>
+                <div>
+                  <label>Details of children</label>
+                  <div id="childRows">
+                    <div class="child-row">
+                      <input name="child_name[]" placeholder="Full name" aria-label="Child name" />
+                      <input name="child_dob[]" type="date" aria-label="Date of birth" />
+                      <select name="child_sex[]" aria-label="Sex"><option value="">Sex</option><option>F</option><option>M</option></select>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-add" id="addChild">+ Add another child</button>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Sections -->
+            <fieldset>
+              <legend>Club sections of interest</legend>
+              <p class="note">Indicate the section(s) you'd like to join. Some sections have separate application forms and sectional fees (not included in the entrance fee and subscription).</p>
+              <div class="opt-grid cols3">
+                <label class="opt"><input type="checkbox" name="sections[]" value="Golf" /> Golf</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Cricket" /> Cricket</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Tennis" /> Tennis</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Squash" /> Squash</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Lawn Bowls" /> Lawn Bowls</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Boating &amp; Angling" /> Boating &amp; Angling</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Snooker" /> Snooker</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Darts" /> Darts</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Gym" /> Gym</label>
+                <label class="opt"><input type="checkbox" name="sections[]" value="Library / House" /> Library / House</label>
+              </div>
+            </fieldset>
+
+            <!-- Proposer & seconders -->
+            <fieldset>
+              <legend>Proposer &amp; seconders</legend>
+              <p class="note">Your application must be proposed and seconded by <strong>three current members</strong> (you cannot propose yourself). A proposer must have known you for at least six months.</p>
+              <div class="stack" style="margin-top:0.8rem">
+                <div class="grid2">
+                  <div><label for="proposer_name">Proposer — name</label><input id="proposer_name" name="proposer_name" /></div>
+                  <div><label for="proposer_card">Member's card no.</label><input id="proposer_card" name="proposer_card" /></div>
+                </div>
+                <div class="grid2">
+                  <div><label for="seconder1_name">Seconder 1 — name</label><input id="seconder1_name" name="seconder1_name" /></div>
+                  <div><label for="seconder1_card">Member's card no.</label><input id="seconder1_card" name="seconder1_card" /></div>
+                </div>
+                <div class="grid2">
+                  <div><label for="seconder2_name">Seconder 2 — name</label><input id="seconder2_name" name="seconder2_name" /></div>
+                  <div><label for="seconder2_card">Member's card no.</label><input id="seconder2_card" name="seconder2_card" /></div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Payment -->
+            <fieldset>
+              <legend>Payment</legend>
+              <div class="opt-grid cols2">
+                <label class="opt"><input type="radio" name="payment_method" value="cash_cheque" /> Non-company / Country — cash or cheque for entrance fee &amp; subscription</label>
+                <label class="opt"><input type="radio" name="payment_method" value="stop_order" /> Company employee — signed stop order for entrance fee &amp; subscription</label>
+              </div>
+              <p class="note" style="margin-top:0.7rem">Entrance fees and subscriptions will be confirmed by the club on approval.</p>
+            </fieldset>
+
+            <!-- Declaration -->
+            <fieldset>
+              <legend>Declaration</legend>
+              <ol class="declaration">
+                <li>I accept and agree that I enter and use Triangle Country Club premises at my own risk.</li>
+                <li>I will not hold the Club responsible for injury, loss, damage or theft of my, my family's or any guest's person or property.</li>
+                <li>I will ensure my family and guests act per the Constitution and conduct themselves in an orderly manner, maintaining the rules of the Club at all times.</li>
+                <li>I will advise the Club Manager of any of my children who reach 18 years of age.</li>
+                <li>Should I fail to adhere to the rules, I may be called before the Club Disciplinary Committee and may have my membership revoked.</li>
+                <li>I will follow the instructions of the Club staff when requested.</li>
+                <li>I will comply with the Triangle Ltd. Ramangwana SHE Policy.</li>
+                <li>I will adhere to the Constitution and regulations of each sporting section I join.</li>
+              </ol>
+              <label class="opt" style="margin-top:1rem"><input type="checkbox" name="agree" value="yes" required /> I have read and accept the declaration above and agree to abide by the Club Constitution. *</label>
+              <div class="grid2" style="margin-top:1rem">
+                <div><label for="signature_name">Full name (as signature) *</label><input id="signature_name" name="signature_name" required /></div>
+                <div><label for="sign_date">Date</label><input id="sign_date" name="sign_date" type="date" /></div>
+              </div>
+            </fieldset>
+
+            <!-- honeypot -->
+            <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+              <label>Company<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="justify-content:center">Submit application
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <p class="note">Submitted directly to the club's Administration office. Fields marked * are required.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/main.js?v=20"></script>
+  <script>
+    (function () {
+      // default date = today
+      var d = document.getElementById("sign_date");
+      if (d) d.value = new Date().toISOString().slice(0, 10);
+
+      // add child rows (max 8)
+      var rows = document.getElementById("childRows");
+      document.getElementById("addChild").addEventListener("click", function () {
+        if (rows.querySelectorAll(".child-row").length >= 8) { this.disabled = true; return; }
+        var r = rows.querySelector(".child-row").cloneNode(true);
+        r.querySelectorAll("input").forEach(function (i) { i.value = ""; });
+        r.querySelector("select").selectedIndex = 0;
+        rows.appendChild(r);
+      });
+
+      var form = document.getElementById("memberForm");
+      var status = document.getElementById("formStatus");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var btn = form.querySelector("button[type=submit]");
+        var original = btn.innerHTML;
+        status.className = "form-status"; status.textContent = "";
+        btn.disabled = true; btn.innerHTML = "Submitting…";
+        fetch("membership-apply.php", { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
+          .then(function (res) { return res.json().catch(function () { return {}; }).then(function (data) { return { res: res, data: data }; }); })
+          .then(function (r) {
+            if (r.res.ok && r.data.ok) {
+              form.reset();
+              if (d) d.value = new Date().toISOString().slice(0, 10);
+              status.textContent = r.data.message || "Thank you — your application has been submitted.";
+              status.classList.add("ok");
+              status.scrollIntoView({ behavior: "smooth", block: "center" });
+            } else {
+              status.textContent = (r.data && r.data.error) || "Something went wrong. Please try again or email the club.";
+              status.classList.add("err");
+            }
+          })
+          .catch(function () {
+            status.textContent = "Network error — please try again shortly.";
+            status.classList.add("err");
+          })
+          .finally(function () { btn.disabled = false; btn.innerHTML = original; });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Triangle Country Club — Concept B (static site) for cPanel / Apache
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# Never serve the mail settings (contains the mailbox password on the server)
+<Files "mail-config.php">
+  Require all denied
+</Files>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+  AddType video/webm .webm
+  AddType video/mp4 .mp4
+  AddType image/x-icon .ico
+  AddType application/manifest+json .webmanifest
+  AddType application/xml .xml
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml \
+    application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.(webp|jpg|jpeg|png|svg|webm|mp4)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>

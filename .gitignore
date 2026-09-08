@@ -1,0 +1,22 @@
+# Heavy source assets — not part of the deployed site
+images/new-images/
+images/_prev-drone/
+video/_prev-hero/
+images/*.mp4
+images/_prev-hero-poster.jpg
+
+# Secrets — mail-config.php is created ONCE on the server (holds mailbox
+# passwords). Never commit it. Template: mail-config.example.php
+mail-config.php
+
+# Internal working docs (not deployed)
+CHAT_HANDOFF.md
+COMPLETION_PLAN.md
+Application for membership 2026.doc
+
+# Editor / OS / build artifacts
+.~lock.*#
+*.zip
+*.log
+Thumbs.db
+.DS_Store
