@@ -1,10 +1,10 @@
 ---
 deployment:
   tasks:
-    # EDIT THIS PATH: set it to your account's web root.
-    #   Primary domain      -> /home/CPANEL_USERNAME/public_html
-    #   Addon/sub-domain    -> /home/CPANEL_USERNAME/trianglecountryclub.com
-    - export DEPLOYPATH=/home/CPANEL_USERNAME/public_html
+    # Web root for cPanel user "triangl1" (primary domain trianglecountryclub.com).
+    # If trianglecountryclub.com is an addon/sub-domain instead, change this to
+    # its document root (e.g. /home/triangl1/trianglecountryclub.com).
+    - export DEPLOYPATH=/home/triangl1/public_html
     - /bin/mkdir -p "$DEPLOYPATH"
     # Copy the site (visible files + dirs). mail-config.php is git-ignored,
     # so the server's filled-in copy (with passwords) is never overwritten.
