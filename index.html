@@ -23,6 +23,96 @@
   <meta name="twitter:description" content="An affordable premium stop-over in Zimbabwe's Lowveld — 45 chalets, a championship Par 72 golf course, the Baobab Restaurant and conferencing. Your base en route to Gonarezhou National Park, since 1960." />
   <meta name="twitter:image" content="https://trianglecountryclub.com/images/og-image.jpg" />
   <link rel="canonical" href="https://trianglecountryclub.com/" />
+
+  <!-- Structured data (SEO + AI answer engines). Geo coords are approximate for
+       Triangle town — refine with the exact map pin when convenient. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Resort", "GolfCourse"],
+        "@id": "https://trianglecountryclub.com/#club",
+        "name": "Triangle Country Club",
+        "url": "https://trianglecountryclub.com/",
+        "description": "A championship golf and country club in Triangle, Zimbabwe's south-eastern Lowveld — an 18-hole Par 72 course, 45 chalets, the Baobab Restaurant, and a base for Gonarezhou National Park. Established 1960.",
+        "foundingDate": "1960",
+        "image": "https://trianglecountryclub.com/images/og-image.jpg",
+        "logo": "https://trianglecountryclub.com/brand/tcc-logo-512.png",
+        "priceRange": "$$",
+        "telephone": "+263321336492",
+        "email": "book@t-cc.net",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ross Armstrong Way",
+          "addressLocality": "Triangle",
+          "addressRegion": "Masvingo Province",
+          "addressCountry": "ZW"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -21.0333,
+          "longitude": 31.4667
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "18-hole Par 72 golf course", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Cricket ground", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Tennis courts", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Squash courts", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Lawn bowls green", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Swimming pool", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Restaurant & bars", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Cinema", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Conference & event facilities", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Accommodation (45 chalets)", "value": true }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://trianglecountryclub.com/#website",
+        "url": "https://trianglecountryclub.com/",
+        "name": "Triangle Country Club",
+        "publisher": { "@id": "https://trianglecountryclub.com/#club" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://trianglecountryclub.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where is Triangle Country Club?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Triangle Country Club is in Triangle, in Zimbabwe's south-eastern Lowveld, on Ross Armstrong Way — about 25 km from Chiredzi, within the Triangle Sugar Estate." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Triangle Country Club a good base for Gonarezhou National Park?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Triangle is the natural overnight base on the overland route to Gonarezhou National Park, a favourite of overlanders and travellers heading into the park." }
+          },
+          {
+            "@type": "Question",
+            "name": "What sports and facilities are available?",
+            "acceptedAnswer": { "@type": "Answer", "text": "An 18-hole Par 72 championship golf course, plus cricket, tennis, squash, lawn bowls and a swimming pool — alongside the Baobab Restaurant, bars, a cinema and conference facilities." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Triangle Country Club have accommodation?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes — 45 comfortable chalets suitable for families, corporate guests and overland travellers, plus the Baobab Restaurant on the estate." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can non-members visit or stay?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Visitors, touring sportspeople and travellers are welcome to stay and use the facilities — contact the club to book." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I contact or book Triangle Country Club?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Call +263 321 33 6492 (landline) or +263 78 294 6200 (mobile), message +263 77 404 5150 on WhatsApp, or email book@t-cc.net." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div id="site-nav"></div>
@@ -182,6 +272,34 @@
         <div class="media reveal" data-d="1">
           <img src="images/members.webp" alt="Children playing on the estate field" loading="lazy" />
           <span class="media-tag">School groups welcome</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="pad cream-alt" id="faq">
+      <style>
+        .faq{max-width:60ch;margin:2.2rem auto 0}
+        .faq details{border-top:1px solid rgba(22,35,58,0.14);padding:1.15rem 0}
+        .faq details:last-child{border-bottom:1px solid rgba(22,35,58,0.14)}
+        .faq summary{cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:1.05rem;line-height:1.4;list-style:none;display:flex;justify-content:space-between;gap:1.2rem}
+        .faq summary::-webkit-details-marker{display:none}
+        .faq summary::after{content:"+";color:var(--clay);font-weight:400;font-size:1.3rem;line-height:1}
+        .faq details[open] summary::after{content:"\2013"}
+        .faq details p{margin-top:0.85rem;color:var(--ink-soft);line-height:1.65}
+      </style>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Good to know</p>
+          <h2 class="h2">Frequently asked&nbsp;questions.</h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary>Where is Triangle Country Club?</summary><p>Triangle Country Club is in Triangle, in Zimbabwe's south-eastern Lowveld, on Ross Armstrong Way — about 25 km from Chiredzi, within the Triangle Sugar Estate.</p></details>
+          <details><summary>Is it a good base for Gonarezhou National Park?</summary><p>Yes. Triangle is the natural overnight base on the overland route to Gonarezhou National Park, a favourite of overlanders and travellers heading into the park.</p></details>
+          <details><summary>What sports and facilities are available?</summary><p>An 18-hole Par 72 championship golf course, plus cricket, tennis, squash, lawn bowls and a swimming pool — alongside the Baobab Restaurant, bars, a cinema and conference facilities.</p></details>
+          <details><summary>Does Triangle Country Club have accommodation?</summary><p>Yes — 45 comfortable chalets suitable for families, corporate guests and overland travellers, plus the Baobab Restaurant on the estate.</p></details>
+          <details><summary>Can non-members visit or stay?</summary><p>Yes. Visitors, touring sportspeople and travellers are welcome to stay and use the facilities — contact the club to book.</p></details>
+          <details><summary>How do I contact or book?</summary><p>Call +263 321 33 6492 (landline) or +263 78 294 6200 (mobile), message +263 77 404 5150 on WhatsApp, or email book@t-cc.net.</p></details>
         </div>
       </div>
     </section>
