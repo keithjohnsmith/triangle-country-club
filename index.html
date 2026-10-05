@@ -121,10 +121,19 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-media">
-        <video muted loop playsinline preload="none" poster="images/hero-poster.jpg" id="heroVideo">
+        <video muted loop playsinline preload="none" poster="images/hero-poster.jpg" id="heroVideo"
+               data-src-hd="video/hero.mp4" data-src-sd="video/hero-sd.mp4">
           <source src="video/hero.mp4" type="video/mp4" />
         </video>
+        <div class="hero-loading" id="heroLoading" aria-hidden="true"><span class="spinner"></span></div>
       </div>
+      <style>
+        .hero-media .hero-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;pointer-events:none;transition:opacity .6s ease}
+        .hero-media .hero-loading.hidden{opacity:0}
+        .hero-media .spinner{width:44px;height:44px;border-radius:50%;border:3px solid rgba(244,245,247,0.25);border-top-color:var(--amber);animation:herospin .8s linear infinite}
+        @keyframes herospin{to{transform:rotate(360deg)}}
+        @media (prefers-reduced-motion: reduce){.hero-media .hero-loading{display:none}}
+      </style>
       <div class="wrap hero-inner">
         <p class="eyebrow" style="color:var(--amber)">Zimbabwe's Lowveld · Gateway to Gonarezhou · Est. 1960</p>
         <h1 class="display">Where Business, Leisure &amp; Lifestyle come <span class="italic-accent">together.</span></h1>
@@ -321,6 +330,6 @@
   </main>
 
   <div id="site-footer"></div>
-  <script src="js/main.js?v=20"></script>
+  <script src="js/main.js?v=21"></script>
 </body>
 </html>

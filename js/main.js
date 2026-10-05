@@ -89,10 +89,43 @@ function init() {
   );
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-  // Background videos (hero + full-width bands) — start after load (poster first;
-  // keeps first paint fast). Skipped entirely under reduced-motion.
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const vids = document.querySelectorAll("#heroVideo, #golfVideo");
+  // Background videos — start after load (poster first; keeps first paint fast).
+  // Skipped entirely under reduced-motion.
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Hero video: adaptive quality + loading spinner. On slow / data-saver
+  // connections it loads the lighter 480p up front; if the 720p hasn't started
+  // playing within ~8s it auto-downgrades to 480p rather than stalling on the
+  // static poster. The spinner fades out once playback starts, and we give up
+  // gracefully to the poster if the video truly can't load.
+  const hero = document.getElementById("heroVideo");
+  if (hero && !reduceMotion) {
+    const spin = document.getElementById("heroLoading");
+    const hideSpin = () => spin && spin.classList.add("hidden");
+    const hd = hero.dataset.srcHd || (hero.querySelector("source") || {}).src;
+    const sd = hero.dataset.srcSd;
+    const conn = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
+    const slow = conn && (conn.saveData || /(^|-)2g$|^3g$/.test(conn.effectiveType || ""));
+
+    let onSD = false;
+    const load = (src) => { hero.src = src; hero.preload = "auto"; hero.load(); hero.play().catch(hideSpin); };
+    const toSD = () => { if (!onSD && sd && hero.src.indexOf(sd) === -1) { onSD = true; load(sd); } };
+
+    hero.addEventListener("playing", hideSpin);
+    hero.addEventListener("error", hideSpin);
+
+    const start = () => {
+      load(slow && sd ? (onSD = true, sd) : hd);
+      if (!onSD) setTimeout(() => { if (hero.readyState < 3) toSD(); }, 8000); // HAVE_FUTURE_DATA
+      setTimeout(hideSpin, 20000); // last resort: don't spin forever
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start);
+  }
+
+  // Any other background videos (e.g. #golfVideo) — simple play after load.
+  if (!reduceMotion) {
+    const vids = document.querySelectorAll("#golfVideo");
     const playAll = () => vids.forEach((v) => { v.preload = "auto"; v.play().catch(() => {}); });
     if (vids.length) {
       if (document.readyState === "complete") playAll();
